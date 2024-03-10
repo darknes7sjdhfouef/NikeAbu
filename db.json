@@ -65,46 +65,5 @@
       "color": "black"
     }
   ],
-  "basket": [
-    {
-      "id": "0b72",
-      "name": "Member product Nike Team Hustle D 11 ",
-      "price": "₱3,295",
-      "type": "Baby/Toddler Shoes ",
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/36e0fe8d-5f66-463f-bbc8-04724524625d/team-hustle-d-11-shoes-ZWl72H.png",
-      "color": "White"
-    },
-    {
-      "id": "20ed",
-      "name": "Tatum 1",
-      "price": "₱2,495",
-      "type": " Baby/Toddler Shoes ",
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/642ac049-3180-4bde-b49e-b137d626f2a8/tatum-1-shoes-ctgGHW.png",
-      "color": "Brown"
-    },
-    {
-      "id": "20ed",
-      "name": "Tatum 1",
-      "price": "₱2,495",
-      "type": " Baby/Toddler Shoes ",
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/642ac049-3180-4bde-b49e-b137d626f2a8/tatum-1-shoes-ctgGHW.png",
-      "color": "Brown"
-    },
-    {
-      "id": "42ca",
-      "name": "Nike Kawa SE ",
-      "price": "₱1,495",
-      "type": "Baby/Toddler Slides ",
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/52837327-6b0b-462f-9b96-1a7e18d88387/kawa-se-slides-7rdLGg.png",
-      "color": "Black"
-    },
-    {
-      "id": "20ed",
-      "name": "Tatum 1",
-      "price": "₱2,495",
-      "type": " Baby/Toddler Shoes ",
-      "img": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco,u_126ab356-44d8-4a06-89b4-fcdcc8df0245,c_scale,fl_relative,w_1.0,h_1.0,fl_layer_apply/642ac049-3180-4bde-b49e-b137d626f2a8/tatum-1-shoes-ctgGHW.png",
-      "color": "Brown"
-    }
-  ]
+  "basket": []
 }

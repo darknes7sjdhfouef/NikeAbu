@@ -1,16 +1,23 @@
 import axios from "axios";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
 const productContext = createContext();
 export const useProduct = () => useContext(productContext);
+
 const ProductContext = ({ children }) => {
   let API_PRODUCTS = "http://localhost:3000/product";
   let API_BASKET = "http://localhost:3000/basket";
 
   const [product, setProduct] = useState([]);
-  // eslint-disable-next-line no-empty-pattern
-  const [] = useState([]);
+  const [basket, setBasket] = useState([]);
   const [oneProduct, setOneProduct] = useState({});
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 6;
+
+  useEffect(() => {
+    readProduct();
+    readBasket();
+  }, []);
 
   async function addProduct(newProduct) {
     await axios.post(API_PRODUCTS, newProduct);
@@ -36,32 +43,28 @@ const ProductContext = ({ children }) => {
     readProduct();
   }
 
-  // пагинация
-  const [page, setPage] = useState(1);
-  const itemsParPage = 6;
-  const count = Math.ceil(product.length / itemsParPage);
-
-  function currentPage() {
-    const begin = (page - 1) * itemsParPage;
-    const end = begin + itemsParPage;
-    return product.slice(begin, end);
+  async function readBasket() {
+    const { data } = await axios(API_BASKET);
+    setBasket(data);
   }
-
-
 
   async function addToBasket(item) {
-      await axios.post(API_BASKET, item)
+    await axios.post(API_BASKET, item);
+    readBasket(); // Обновляем корзину после добавления товара
   }
-  
 
-  const basketAdd = (itemId) => {
-  };
-  
+  async function deleteFromBasket(id) {
+    await axios.delete(`${API_BASKET}/${id}`);
+    readBasket(); // Обновляем корзину после удаления товара
+  }
 
+  const count = Math.ceil(product.length / itemsPerPage);
 
-
-
-
+  function currentPage() {
+    const begin = (page - 1) * itemsPerPage;
+    const end = begin + itemsPerPage;
+    return product.slice(begin, end);
+  }
 
   let values = {
     addProduct,
@@ -77,8 +80,10 @@ const ProductContext = ({ children }) => {
     setPage,
     currentPage,
     addToBasket,
-    basketAdd,
+    basket,
+    deleteFromBasket, 
   };
+
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>
   );

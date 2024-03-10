@@ -13,7 +13,7 @@ const MainRoutes = () => {
 	const PRIVAT = [
 		{ link: "/admin", element: <Admin />, id: 1 },
 		{ link: "/edit/:id", element: <EditProduct />, id: 2 },
-		{link: "/detail", element: <MoreDetail/>, key : 3}
+		{link: "/detail/:id", element: <MoreDetail/>, key : 3}
 	]
 	const PUBLIC = [
 		{ link: "/", element: <ProductsPage />, id: 4 },

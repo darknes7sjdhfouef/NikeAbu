@@ -11,13 +11,13 @@ import { useAuthContext } from "../context/AuthContext";
 import { useProduct } from "../context/ProductContext";
 import { ADMIN_USER } from "../../helpers/const";
 const ProductCard = ({ i, handleDetailClick }) => {
-  const { deleteProduct, basketAdd , addToBasket } = useProduct();
+  const { deleteProduct, basketAdd, addToBasket } = useProduct();
   const navigate = useNavigate();
   const { user } = useAuthContext();
   return (
     <Card sx={{ width: 435, height: "550px" }}>
       <CardMedia
-        onClick={handleDetailClick}
+        onClick={() => navigate(`detail/${i.id}`)}
         sx={{ height: 350 }}
         image={i.img}
         title="green iguana"
